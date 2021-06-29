@@ -23,9 +23,12 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark text-light shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    Bloggerman
-                </a>
+                <div>
+                    <a class="navbar-brand" href="{{ url('/') }}">
+                       <img src="{{ asset('/logo_image/bloggerman.jpg') }}" style="width: 50px" class="mr-3">  Bloggerman
+                    </a>
+                </div>
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
