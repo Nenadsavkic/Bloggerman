@@ -21,11 +21,11 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark text-light shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary text-light shadow-sm">
             <div class="container">
                 <div>
                     <a class="navbar-brand" href="{{ url('/') }}">
-                       <img src="{{ asset('/logo_image/bloggerman.jpg') }}" style="width: 50px" class="mr-3">  Bloggerman
+                       <img src="{{ asset('/images/logo_image/bloggerman.jpg') }}" style="width: 70px" class="mr-3">  Bloggerman
                     </a>
                 </div>
 
@@ -33,31 +33,46 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse ml-5" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto ml-5 ">
-                       <li><a class=" text-decoration-none text-light" href="{{url('/home') }}">Home</a></li>
-                    </ul>
+                    @if (Auth::user())
+                      <ul class="navbar-nav mr-auto ">
+                        <li><a class=" text-decoration-none text-light" href="{{url('/home') }}">Home</a></li>
+                     </ul>
+                    @endif
+
 
                     <!-- Right Side Of Navbar -->
+
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link text-light" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link text-light" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
+
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <img
+                                    @if (isset(Auth::user()->user_image))
+                                       src="{{ asset('/images/user_image/'.Auth::user()->user_image) }}"
+                                    @else
+
+                                      src="{{ asset('/images/user_image/noimage.jpg') }}"
+
+                                    @endif
+
+                                    class="img-fluid  p-3" style="width: 100px; border-radius:40%"> {{ Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

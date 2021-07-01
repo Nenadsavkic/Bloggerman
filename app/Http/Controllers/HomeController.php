@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -26,5 +28,35 @@ class HomeController extends Controller
     {
         $user = Auth::user();
         return view('home', compact('user'));
+    }
+
+
+    public function saveImg(Request $request)
+    {
+        $user = Auth::user();
+        $request->validate([
+          'user_image' => 'mimes:jpg,jpeg,png'
+      ]);
+
+      if ($request->hasFile('user_image')) {
+
+            $image = $request->file('user_image');
+            $image_name = $image->getClientOriginalName();
+            $image->move(public_path('/images/user_image'), $image_name);
+       DB::table('users')->where(['id' => Auth::user()->id])->update(['user_image' => $image_name]);
+
+      }
+
+
+       return redirect()->back();
+    }
+
+    public function deleteImg()
+    {
+          $image = null;
+       DB::table('users')->where(['id' => Auth::user()->id])->update(['user_image' => $image]);
+
+
+          return redirect()->back();
     }
 }

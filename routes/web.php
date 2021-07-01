@@ -21,3 +21,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::post('/home-save-img', [App\Http\Controllers\HomeController::class, 'saveImg'])
+->name('saveImg');
+Route::delete('/home-delete-img', [App\Http\Controllers\HomeController::class, 'deleteImg'])
+->name('deleteImg');
+
+Route::resource('post', App\Http\Controllers\PostController::class);
+
