@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -13,7 +14,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $allPosts = Post::all();
+
+        return view('welcome', compact('allPosts'));
     }
 
     /**
@@ -23,7 +26,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('createBlogForm');
     }
 
     /**

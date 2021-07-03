@@ -57,6 +57,16 @@ class HomeController extends Controller
        DB::table('users')->where(['id' => Auth::user()->id])->update(['user_image' => $image]);
 
 
-          return redirect()->back();
+          return redirect()->back()->with('message', 'Your image is deleted.');
+    }
+
+    public function deleteUser($id)
+    {
+        $user = User::find($id);
+        $user->delete();
+
+
+
+        return redirect('/')->with('message','Your profile is deleted.');
     }
 }

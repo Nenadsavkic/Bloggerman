@@ -4,11 +4,11 @@
 @endsection
 
 @section('content')
-<div class="container mt-5">
+<div class="container-fluid mt-5">
     {{-- <h2>Welcome {{ $user->name }}</h2> --}}
 
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
             @include('layouts.sidebar')
         </div>
         <div class="col-md-8">

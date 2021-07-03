@@ -39,6 +39,7 @@
                       <ul class="navbar-nav mr-auto ">
                         <li><a class=" text-decoration-none text-light" href="{{url('/home') }}">Home</a></li>
                      </ul>
+
                     @endif
 
 
@@ -85,7 +86,9 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
+
                                 </div>
+
                             </li>
                         @endguest
                     </ul>
@@ -98,7 +101,10 @@
         </main>
     </div>
     @section('page_scripts')
+
      <script src="{{ asset('js/app.js') }}"></script>
+     <script src="{{ asset('js/main.js') }}"></script>
+
     @endsection
 </body>
 </html>

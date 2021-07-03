@@ -8,6 +8,8 @@
                   <div class="row mt-5">
                       <div class="col-md-6 offset-md-2 pl-5">
 
+                        @include('layouts.flashMessage')
+
                         <h1 class="text-center text-primary mt-5">Welcome to Bloggerman</h1>
                         <h2 class="text-center text-primary"> web platform for bloggers with superpowers.</h2>
                         <br>

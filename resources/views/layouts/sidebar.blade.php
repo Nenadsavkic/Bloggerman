@@ -30,19 +30,22 @@
 
 
       <li>
-        <a href="#"  class="nav-link text-white mr-3 ml-3 mt-3 ">
+        <a id="btn1" href="{{ route('post.create') }}"  class="nav-link text-white mr-3 ml-3 mt-3">
           Create new Blog
         </a>
       </li>
       <li>
-        <a href="{{ url('/home') }}" class="nav-link text-white ml-3 mr-3 mt-3">
+        <a id="btn2" href="{{ url('/home') }}" class="nav-link text-white ml-3 mr-3 mt-3">
           All your blogs
         </a>
       </li>
       <li>
-        <a href="#" class="nav-link text-white ml-3 mr-3 mt-3">
-          Delete profile
-        </a>
+        <form action="{{ route('deleteUser', ['id'=>Auth::user()->id]) }}" method="post">
+            @csrf
+            @method('delete')
+          <button type="submit" class=" nav-link text-white ml-3 mr-3 mt-3 bg-transparent"
+          onclick="return confirm('Are you sure you want to delete your profile');">Delete profile</button>
+        </form>
       </li>
 
     </ul>
@@ -50,3 +53,31 @@
     <hr>
 
 </div>
+
+
+<script>
+
+var btn1 = document.querySelector('#btn1');
+var btn2 = document.querySelector('#btn2');
+
+
+btn1.addEventListener('click', addClassBtn1);
+btn2.addEventListener('click', addClassBtn2);
+
+function addClassBtn1(){
+
+    btn1.classList.add('active');
+    btn2.classList.remove('active');
+    btn3.classList.remove('active');
+
+}
+
+function addClassBtn2(){
+
+    btn2.classList.add('active');
+    btn1.classList.remove('active');
+    btn3.classList.remove('active');
+
+}
+
+</script>
