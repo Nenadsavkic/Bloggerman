@@ -21,15 +21,27 @@ Route::get('/', [App\Http\Controllers\PostController::class, 'index'])
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home-show-single-post/{id}', [App\Http\Controllers\HomeController::class, 'showSingleUserPost'])
+->name('singleUserPost');
+Route::get('/single-post/{id}', [App\Http\Controllers\PostController::class, 'show'])
+->name('singlePostView');
+Route::get('/edit-post/{id}', [App\Http\Controllers\PostController::class, 'edit'])
+->name('editPost');
 
 
+Route::post('/save-edited-post/{id}', [App\Http\Controllers\PostController::class, 'update'])
+->name('saveEditedPost');
 Route::post('/home-save-img', [App\Http\Controllers\HomeController::class, 'saveImg'])
 ->name('saveImg');
+Route::post('/comment/{id}', [App\Http\Controllers\CommentController::class, 'createComment'])
+->name('createComment');
 
 Route::delete('/home-delete-img', [App\Http\Controllers\HomeController::class, 'deleteImg'])
 ->name('deleteImg');
 Route::delete('/home-delete-user/{id}', [App\Http\Controllers\HomeController::class, 'deleteUser'])
 ->name('deleteUser');
+Route::delete('/post-delete/{id}', [App\Http\Controllers\PostController::class, 'destroy'])
+->name('deletePost');
 
 Route::resource('post', App\Http\Controllers\PostController::class);
 

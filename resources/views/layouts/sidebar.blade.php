@@ -35,7 +35,7 @@
         </a>
       </li>
       <li>
-        <a id="btn2" href="{{ url('/home') }}" class="nav-link text-white ml-3 mr-3 mt-3">
+        <a id="btn2" href="{{ route('home') }}" class="nav-link text-white ml-3 mr-3 mt-3">
           All your blogs
         </a>
       </li>
