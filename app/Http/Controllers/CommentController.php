@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comment;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Mockery\Matcher\Type;
@@ -15,6 +16,7 @@ class CommentController extends Controller
         $post = Post::find($id);
         $user = Auth::user();
         $allComments = Comment::all();
+        $allUsers = User::all();
 
 
 
@@ -28,15 +30,20 @@ class CommentController extends Controller
 
             $comment = new Comment();
             $comment->body = $request->body;
-            $comment->user_id = Auth::user()->id;
+            $comment->sender_id = Auth::user()->id;
             $comment->post_id = $post->id;
             $comment->save();
 
 
+            $sender = $allUsers->where($user->id , $comment->sender_id);
+
+           // prekinuti ponavljanje loop
+
+            dd($allComments);
 
 
+       return view('singlePostView', compact('post','user','allComments','sender'));
 
-       return view('showComment', compact('post','user','allComments'));
 
     }
 
