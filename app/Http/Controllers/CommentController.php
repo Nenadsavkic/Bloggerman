@@ -13,11 +13,9 @@ class CommentController extends Controller
 {
     public function createComment(Request $request, $id)
     {
-        $post = Post::find($id);
-        $user = Auth::user();
-        $allComments = Comment::all();
-        $allUsers = User::all();
 
+            $post = Post::find($id);
+            $user = Auth::user();
 
 
 
@@ -27,7 +25,6 @@ class CommentController extends Controller
 
             // Create new comment
 
-
             $comment = new Comment();
             $comment->body = $request->body;
             $comment->sender_id = Auth::user()->id;
@@ -35,16 +32,16 @@ class CommentController extends Controller
             $comment->save();
 
 
-            $sender = $allUsers->where($user->id , $comment->sender_id);
-
-           // prekinuti ponavljanje loop
-
-            dd($allComments);
+            return redirect()->back();
 
 
-       return view('singlePostView', compact('post','user','allComments','sender'));
+    }
 
-
+    public function destroy($id)
+    {
+        $comment = Comment::find($id);
+        $comment->delete();
+        return redirect()->back();
     }
 
 

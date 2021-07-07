@@ -31,12 +31,12 @@
 
       <li>
         <a id="btn1" href="{{ route('post.create') }}"  class="nav-link text-white mr-3 ml-3 mt-3">
-          Create new Blog
+          Create new Post
         </a>
       </li>
       <li>
         <a id="btn2" href="{{ route('home') }}" class="nav-link text-white ml-3 mr-3 mt-3">
-          All your blogs
+          All your posts
         </a>
       </li>
       <li>

@@ -28,7 +28,7 @@
                         </div><br>
                         <div class="card-footer text-muted">
                           <button class="btn btn-primary float-left">Views: {{ $post->views }}</button>
-                          <button class="btn btn-secondary float-right">Comments: {{ $post->comments }}</button>
+                          <button class="btn btn-secondary float-right">Comments: {{ $post->comment->count() }}</button>
                         </div>
                       </div>
                 </div>

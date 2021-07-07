@@ -96,7 +96,11 @@ class PostController extends Controller
     public function show($id)
     {
          $post = Post::find($id);
-         $post->increment('views');
+         if (auth()->check() && Auth::user()->id !== $post->user_id ) {
+
+            $post->increment('views');
+
+         }
 
          return view('singlePostView',['post' => $post]);
     }
