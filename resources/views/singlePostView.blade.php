@@ -10,12 +10,12 @@ $comments = Comment::all();
 
 @extends('layouts.app')
 @section('title')
-    {{ $post->title }}
+    {{ $post->description }}
 @endsection
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-8 offset-md-2">
+            <div class="col-md-10 offset-md-1">
                   <div class="card p-5 ">
                       <div>
                         <p class="float-left">Author: {{ $post->user->name }}</p>
@@ -60,12 +60,12 @@ $comments = Comment::all();
         </div>
 
          <div class="row">
-             <div class="col-md-8 offset-md-2">
+             <div class="col-md-10 offset-md-1">
 
                 <h2>Comments</h2>
 
              </div>
-            <div class="col-md-8 offset-md-2">
+            <div class="col-md-10 offset-md-1">
 
 
 
@@ -113,7 +113,7 @@ $comments = Comment::all();
 
         <br>
         <div class="row">
-            <div class="col-md-8 offset-md-2">
+            <div class="col-md-10 offset-md-1">
                 @if (Auth::user())
                 <form action="{{ route('createComment', ['id' =>$post->id]) }}" method="post">
                     @csrf

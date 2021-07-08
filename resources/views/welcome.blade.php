@@ -31,7 +31,7 @@
                                    <p class="float-right mt-2">Views: {{ $post->views }} </p>
                                 </div>
                                 <div class="card-body">
-                                  <h5 class="card-title"><a class="text-muted" href="{{ route('singlePostView', ['id'=>$post->id]) }}">{{ $post->title }}</a></h5>
+                                  <h5 class="card-title"><a class="text-muted" href="{{ route('singlePostView', ['id'=>$post->id]) }}">{{ $post->description }}</a></h5>
                                   @if (isset($post->image1))
                                   <img class="img-fluid" src="/images/post_images/{{ $post->image1 }}" class="card-img">
                               @elseif(isset($post->image2))

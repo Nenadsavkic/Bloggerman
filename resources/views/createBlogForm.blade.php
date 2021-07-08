@@ -10,6 +10,7 @@
 
     <form action="{{ route('post.store') }}" method="post" enctype="multipart/form-data">
         @csrf
+        <input type="text" name="description" class="form-control" placeholder="description"><br>
         <textarea class="form-control" name="body" id="editor"  cols="30" rows="10" placeholder="Write your post"></textarea>
         <br>
         <input type="file" name="image1" class="form-control"><br>

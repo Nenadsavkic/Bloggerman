@@ -10,6 +10,7 @@
 
     <form action="{{ route('saveEditedPost', ['id'=>$post->id]) }}" method="post" enctype="multipart/form-data">
         @csrf
+        <input class="form-control" type="text" name="description" value="{{ $post->description }}"><br>
         <textarea class="form-control" name="body" id="editor"  cols="30" rows="10">
           {!!$post->body!!}
         </textarea>

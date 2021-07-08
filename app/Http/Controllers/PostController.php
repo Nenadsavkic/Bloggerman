@@ -41,7 +41,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
           $request->validate([
-
+            'description' => 'string|max:255|required',
             'body' =>  'required',
             'image1' => 'mimes:jpg,jpeg,png',
             'image2' => 'mimes:jpg,jpeg,png',
@@ -72,7 +72,7 @@ class PostController extends Controller
           }
 
           Post::create([
-
+            'description' => $request->description,
             'body' => $request->body,
             'image1' => (isset($image1_name)) ? $image1_name : null,
             'image2' => (isset($image2_name)) ? $image2_name : null,
@@ -137,6 +137,7 @@ class PostController extends Controller
 
         $request->validate([
 
+         'description' => 'string|max:255|required',
          'body' =>  'required',
          'image1' => 'mimes:jpg,jpeg,png',
          'image2' => 'mimes:jpg,jpeg,png',
@@ -167,6 +168,7 @@ class PostController extends Controller
 
          $post->update([
 
+             'description' => $request->description,
              'body' => $request->body,
              'image1' => (isset($image1_name)) ? $image1_name : null,
              'image2' => (isset($image2_name)) ? $image2_name : null,

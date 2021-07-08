@@ -14,28 +14,29 @@
                         <div class="row mt-5">
                             <div class="col-md-4">
                                 @if (isset($post->image1))
-                                  <img class="img-fluid" src="/images/post_images/{{ $post->image1 }}">
+                                  <img class="img-fluid p-2" src="/images/post_images/{{ $post->image1 }}">
                                 @else
-                                  <img class="img-fluid" src="/images/post_images/noimage.jpg">
+                                  <img class="img-fluid p-2" src="/images/post_images/noimage.jpg">
                                 @endif
                             </div>
                             <div class="col-md-4">
                                 @if (isset($post->image2))
-                                  <img class="img-fluid" src="/images/post_images/{{ $post->image2 }}">
+                                  <img class="img-fluid p-2" src="/images/post_images/{{ $post->image2 }}">
                                 @else
-                                  <img class="img-fluid" src="/images/post_images/noimage.jpg">
+                                  <img class="img-fluid p-2" src="/images/post_images/noimage.jpg">
                                 @endif
                             </div>
                             <div class="col-md-4">
                                 @if (isset($post->image3))
-                                  <img class="img-fluid" src="/images/post_images/{{ $post->image3 }}">
+                                  <img class="img-fluid p-2" src="/images/post_images/{{ $post->image3 }}">
                                 @else
-                                  <img class="img-fluid" src="/images/post_images/noimage.jpg">
+                                  <img class="img-fluid p-2" src="/images/post_images/noimage.jpg">
                                 @endif
                             </div>
                         </div>
-
-                        <p class="p-5">{!!$post->body!!}</p>
+                         <div class="col-md-10 offset-md-1 mb-5">
+                             <p>{!!$post->body!!}</p>
+                         </div>
 
 
                     </div><br>
@@ -46,6 +47,7 @@
                             @method('delete')
                             <button type="submit" class="btn btn-secondary float-right">Delete post</button>
                         </form>
+                        <br><br>
              </div>
         </div>
     </div>
