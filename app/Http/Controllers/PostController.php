@@ -42,7 +42,6 @@ class PostController extends Controller
     {
           $request->validate([
 
-            'title' => 'required|max:255',
             'body' =>  'required',
             'image1' => 'mimes:jpg,jpeg,png',
             'image2' => 'mimes:jpg,jpeg,png',
@@ -74,7 +73,6 @@ class PostController extends Controller
 
           Post::create([
 
-            'title' => $request->title,
             'body' => $request->body,
             'image1' => (isset($image1_name)) ? $image1_name : null,
             'image2' => (isset($image2_name)) ? $image2_name : null,
@@ -138,7 +136,7 @@ class PostController extends Controller
 
 
         $request->validate([
-         'title' => 'required|max:255',
+
          'body' =>  'required',
          'image1' => 'mimes:jpg,jpeg,png',
          'image2' => 'mimes:jpg,jpeg,png',
@@ -168,7 +166,7 @@ class PostController extends Controller
         }
 
          $post->update([
-             'title' => $request->title,
+
              'body' => $request->body,
              'image1' => (isset($image1_name)) ? $image1_name : null,
              'image2' => (isset($image2_name)) ? $image2_name : null,

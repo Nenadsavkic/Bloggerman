@@ -10,8 +10,9 @@
 
     <form action="{{ route('saveEditedPost', ['id'=>$post->id]) }}" method="post" enctype="multipart/form-data">
         @csrf
-        <input class="form-control" type="text" name="title" value="{{ $post->title }}"><br>
-        <textarea class="form-control" name="body" id="body" value={{ $post->body }} cols="30" rows="10"></textarea>
+        <textarea class="form-control" name="body" id="editor"  cols="30" rows="10">
+          {!!$post->body!!}
+        </textarea>
         <br>
         <input type="file" name="image1" class="form-control"><br>
         <input type="file" name="image2" class="form-control"><br>
@@ -26,7 +27,16 @@
     </form>
 </div>
 
+@endsection
 
+@section('editor-scripts')
 
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
 
 @endsection

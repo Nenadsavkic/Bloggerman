@@ -10,7 +10,7 @@
             </div>
              <div class="col-md-7 offset-md-1 mt-5">
                      <div class="card">
-                         <h2 class="text-center mt-4">{{ $post->title }}</h2>
+
                         <div class="row mt-5">
                             <div class="col-md-4">
                                 @if (isset($post->image1))
@@ -35,7 +35,7 @@
                             </div>
                         </div>
 
-                        <p class="p-5">{{ $post->body }}</p>
+                        <p class="p-5">{!!$post->body!!}</p>
 
 
                     </div><br>

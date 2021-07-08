@@ -106,5 +106,7 @@
      <script src="{{ asset('js/main.js') }}"></script>
 
     @endsection
+    <script src="https://cdn.ckeditor.com/ckeditor5/29.0.0/classic/ckeditor.js"></script>
+    @yield('editor-scripts')
 </body>
 </html>

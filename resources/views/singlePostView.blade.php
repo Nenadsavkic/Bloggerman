@@ -22,7 +22,6 @@ $comments = Comment::all();
                         <p class="float-right">Updated: {{ $post->updated_at->format('d.m.Y') }}</p>
                       </div>
 
-                      <h2 class="text-center  mt-5">{{ $post->title }}</h2>
                       <div class="row mt-5">
                           <div class="col-md-4">
                                 @if (isset($post->image1))
@@ -53,7 +52,7 @@ $comments = Comment::all();
                         </div>
 
 
-                      <p class="mt-5">{{ $post->body }}</p>
+                      <p class="mt-5 p-3">{!! $post->body !!}</p>
                   </div><br>
 
 
@@ -68,7 +67,12 @@ $comments = Comment::all();
              </div>
             <div class="col-md-8 offset-md-2">
 
+
+
+
                 @foreach( $comments as $comment)
+                @if ($comment->post_id == $post->id)
+
                     <div class="card mt-2">
                         <div class="card">
                             <div class="row">
@@ -100,6 +104,8 @@ $comments = Comment::all();
                         </div>
 
                     </div>
+                @endif
+
                 @endforeach
 
             </div>
