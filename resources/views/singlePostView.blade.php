@@ -25,27 +25,27 @@ $comments = Comment::all();
                       <div class="row mt-5">
                           <div class="col-md-4">
                                 @if (isset($post->image1))
-                                <img class="img-fluid" src="/images/post_images/{{ $post->image1 }}">
+                                <img class="img-fluid card-img" src="/images/post_images/{{ $post->image1 }}">
                                 @else
-                                    <img class="img-fluid" src="/images/post_images/noimage.jpg">
+                                    <img class="img-fluid card-img" src="/images/post_images/noimage.jpg">
                                 @endif
 
                             </div>
 
                             <div class="col-md-4">
                                 @if (isset($post->image2))
-                                <img class="img-fluid" src="/images/post_images/{{ $post->image2 }}">
+                                <img class="img-fluid card-img" src="/images/post_images/{{ $post->image2 }}">
                                 @else
-                                    <img class="img-fluid" src="/images/post_images/noimage.jpg">
+                                    <img class="img-fluid card-img" src="/images/post_images/noimage.jpg">
                                 @endif
 
                             </div>
 
                             <div class="col-md-4">
                                 @if (isset($post->image3))
-                                <img class="img-fluid" src="/images/post_images/{{ $post->image3 }}">
+                                <img class="img-fluid card-img" src="/images/post_images/{{ $post->image3 }}">
                                 @else
-                                    <img class="img-fluid" src="/images/post_images/noimage.jpg">
+                                    <img class="img-fluid card-img" src="/images/post_images/noimage.jpg">
                                 @endif
 
                             </div>
@@ -84,7 +84,7 @@ $comments = Comment::all();
                                 </div>
 
                                 <div class="col-md-6">
-                                    @if (Auth::user()->id == $comment->sender_id || Auth::user()->id == $post->user_id)
+                                    @if (auth()->check() && Auth::user()->id == $comment->sender_id ||auth()->check() && Auth::user()->id == $post->user_id)
                                     <form action="{{ route('commentDelete', ['id'=>$comment->id]) }}" method="post">
                                         @csrf
                                         @method('delete')

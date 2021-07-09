@@ -14,23 +14,23 @@
                         <div class="row mt-5">
                             <div class="col-md-4">
                                 @if (isset($post->image1))
-                                  <img class="img-fluid p-2" src="/images/post_images/{{ $post->image1 }}">
+                                  <img class="img-fluid card-img p-2" src="/images/post_images/{{ $post->image1 }}">
                                 @else
-                                  <img class="img-fluid p-2" src="/images/post_images/noimage.jpg">
+                                  <img class="img-fluid card-img p-2" src="/images/post_images/noimage.jpg">
                                 @endif
                             </div>
                             <div class="col-md-4">
                                 @if (isset($post->image2))
-                                  <img class="img-fluid p-2" src="/images/post_images/{{ $post->image2 }}">
+                                  <img class="img-fluid card-img p-2" src="/images/post_images/{{ $post->image2 }}">
                                 @else
-                                  <img class="img-fluid p-2" src="/images/post_images/noimage.jpg">
+                                  <img class="img-fluid card-img p-2" src="/images/post_images/noimage.jpg">
                                 @endif
                             </div>
                             <div class="col-md-4">
                                 @if (isset($post->image3))
-                                  <img class="img-fluid p-2" src="/images/post_images/{{ $post->image3 }}">
+                                  <img class="img-fluid card-img p-2" src="/images/post_images/{{ $post->image3 }}">
                                 @else
-                                  <img class="img-fluid p-2" src="/images/post_images/noimage.jpg">
+                                  <img class="img-fluid card-img p-2" src="/images/post_images/noimage.jpg">
                                 @endif
                             </div>
                         </div>

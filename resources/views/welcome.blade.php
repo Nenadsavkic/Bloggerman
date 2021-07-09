@@ -33,13 +33,13 @@
                                 <div class="card-body">
                                   <h5 class="card-title"><a class="text-muted" href="{{ route('singlePostView', ['id'=>$post->id]) }}">{{ $post->description }}</a></h5>
                                   @if (isset($post->image1))
-                                  <img class="img-fluid" src="/images/post_images/{{ $post->image1 }}" class="card-img">
+                                  <img class="img-fluid card-img" src="/images/post_images/{{ $post->image1 }}" class="card-img">
                               @elseif(isset($post->image2))
-                                  <img class="img-fluid" src="/images/post_images/{{ $post->image2 }}" class="card-img">
+                                  <img class="img-fluid card-img" src="/images/post_images/{{ $post->image2 }}" class="card-img">
                               @elseif(isset($post->image3))
-                                  <img class="img-fluid" src="/images/post_images/{{ $post->image3 }}" class="card-img">
+                                  <img class="img-fluid card-img" src="/images/post_images/{{ $post->image3 }}" class="card-img">
                               @else
-                                  <img class="img-fluid" src="/images/post_images/noimage.jpg">
+                                  <img class="img-fluid card-img" src="/images/post_images/noimage.jpg">
                               @endif
 
                                 </div>
