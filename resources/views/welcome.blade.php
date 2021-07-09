@@ -4,16 +4,16 @@
             Bloggerman
         @endsection
         @section('content')
-            <div class="container">
+            <div class="container content">
                 <div class="row mt-5">
                     <div class="col-md-6 offset-md-2 pl-5">
 
                         @include('layouts.flashMessage')
 
-                        <h1 class="text-center text-primary mt-5">Welcome to Bloggerman</h1>
-                        <h2 class="text-center text-primary"> web platform for bloggers with superpowers.</h2>
+                        <h1 class="text-center text-secondary mt-5">Welcome to Bloggerman</h1>
+                        <h2 class="text-center text-secondary"> web platform for bloggers with superpowers.</h2>
                         <br>
-                        <h2 class="text-center text-primary">Join us, and build something amaizing!</h2>
+                        <h2 class="text-center text-secondary">Join us, and build something amaizing!</h2>
                     </div>
                     <div class="col-md-4">
                         <img src="{{ asset('/images/bloggerman_img/bloggerman3.jpg') }}">
@@ -24,7 +24,7 @@
                 <div class="row mt-5">
 
                        @foreach ($allPosts as $post)
-                        <div class="col-md-4 mt-2">
+                        <div class="col-md-4 mt-2 mb-5">
                             <div class="card text-center">
                                 <div class="card-header bg-dark text-light">
                                    <p class="float-left mt-2">Author: {{ $post->user->name }} </p>

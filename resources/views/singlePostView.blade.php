@@ -13,7 +13,7 @@ $comments = Comment::all();
     {{ $post->description }}
 @endsection
 @section('content')
-    <div class="container">
+    <div class="container content">
         <div class="row">
             <div class="col-md-10 offset-md-1">
                   <div class="card p-5 ">

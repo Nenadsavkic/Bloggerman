@@ -98,6 +98,7 @@
 
         <main class="py-4">
             @yield('content')
+            @include('layouts.footer')
         </main>
     </div>
     @section('page_scripts')

@@ -7,4 +7,9 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-
+.pb-4, .py-4 {
+    padding-bottom: 0 !important;
+}
+.content {
+    min-height: 1200px;
+}
