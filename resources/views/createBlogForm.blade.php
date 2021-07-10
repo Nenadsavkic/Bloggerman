@@ -10,7 +10,9 @@
 
     <form action="{{ route('post.store') }}" method="post" enctype="multipart/form-data">
         @csrf
+        <label for="description">Required <span class="text-danger">*</span></label>
         <input type="text" name="description" class="form-control" placeholder="description"><br>
+        <label for="body">Required <span class="text-danger">*</span></label>
         <textarea class="form-control" name="body" id="editor"  cols="30" rows="10" placeholder="Write your post"></textarea>
         <br>
         <input type="file" name="image1" class="form-control"><br>
