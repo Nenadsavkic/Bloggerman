@@ -27,11 +27,12 @@
                         <div class="col-md-4 mt-2 mb-5">
                             <div class="card text-center">
                                 <div class="card-header bg-dark text-light">
-                                   <p class="float-left mt-2">Author: {{ $post->user->name }} </p>
+                                   <p class="float-left mt-2">Author: {{ $post->user->name }}</p>
                                    <p class="float-right mt-2">Views: {{ $post->views }} </p>
                                 </div>
                                 <div class="card-body">
-                                  <h5 class="card-title"><a class="text-muted" href="{{ route('singlePostView', ['id'=>$post->id]) }}">{{ $post->description }}</a></h5>
+                                    <a class="text-muted" href="{{ route('singlePostView', ['id'=>$post->id]) }}">
+                                  <h5 class="card-title">{{ $post->description }}</h5>
                                   @if (isset($post->image1))
                                   <img class="img-fluid card-img" src="/images/post_images/{{ $post->image1 }}" class="card-img">
                               @elseif(isset($post->image2))
@@ -41,6 +42,7 @@
                               @else
                                   <img class="img-fluid card-img" src="/images/post_images/noimage.jpg">
                               @endif
+                                </a>
 
                                 </div>
                                 <div class="card-footer text-muted bg-dark text-white">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -94,13 +95,17 @@ class PostController extends Controller
     public function show($id)
     {
          $post = Post::find($id);
+         //$users = User::all()->get('id');
+         $user = User::all()->where('id',$post->user_id)->first();
          if (auth()->check() && Auth::user()->id !== $post->user_id ) {
 
             $post->increment('views');
 
          }
 
-         return view('singlePostView',['post' => $post]);
+         //dd($user);
+
+         return view('singlePostView',compact('post','user'));
     }
 
     /**

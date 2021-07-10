@@ -18,12 +18,21 @@ $comments = Comment::all();
             <div class="col-md-10 offset-md-1">
                   <div class="card p-5 ">
                       <div>
-                        <p class="float-left">Author: {{ $post->user->name }}</p>
-                        <p class="float-right">Updated: {{ $post->updated_at->format('d.m.Y') }}</p>
+                            <p class="float-left">Author: {{ $post->user->name }}
+                            <span class="ml-3">
+                            <img class="img-fluid"
+                                @if (isset($user->user_image))
+                                    src="/images/user_image/{{ $user->user_image }}"
+                                @else
+                                    src="/images/user_image/noimage.jpg"
+                                @endif
+                                style="width:70px; border-radius:50%">
+                            </span></p>
+                            <p class="float-right mt-3">Updated: {{ $post->updated_at->format('d.m.Y') }}</p>
                       </div>
 
                       <div class="row mt-5">
-                          <div class="col-md-4">
+                          <div class="col-md-4 mt-2">
                                 @if (isset($post->image1))
                                 <img class="img-fluid card-img" src="/images/post_images/{{ $post->image1 }}">
                                 @else
@@ -32,7 +41,7 @@ $comments = Comment::all();
 
                             </div>
 
-                            <div class="col-md-4">
+                            <div class="col-md-4 mt-2">
                                 @if (isset($post->image2))
                                 <img class="img-fluid card-img" src="/images/post_images/{{ $post->image2 }}">
                                 @else
@@ -41,7 +50,7 @@ $comments = Comment::all();
 
                             </div>
 
-                            <div class="col-md-4">
+                            <div class="col-md-4 mt-2">
                                 @if (isset($post->image3))
                                 <img class="img-fluid card-img" src="/images/post_images/{{ $post->image3 }}">
                                 @else
