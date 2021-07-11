@@ -9,7 +9,7 @@
 
 ### Clone the repository 
 
-   <p> git clone https://github.com/Nenadsavkic/bloggerman.git </p>
+   <p> git clone https://github.com/Nenadsavkic/Bloggerman.git </p>
 
    ### Switch to the repository cloned folder
 
