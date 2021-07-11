@@ -38,7 +38,7 @@
    php artisan storage:link
    ```
 
-### Create database 'mysite' in your local server (xamp), then run migration
+### Create database 'bloggerman' in your local server (xamp), then run migration
 ### Check the database connection in .env before migrating
 
    ```bash
