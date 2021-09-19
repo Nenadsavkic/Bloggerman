@@ -1,12 +1,3 @@
-<?php
-
-use App\Models\Comment;
-
-$comments = Comment::all();
-
-?>
-
-
 
 @extends('layouts.app')
 @section('title')

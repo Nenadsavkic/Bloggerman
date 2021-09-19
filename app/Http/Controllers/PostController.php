@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Api\CommentsController;
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -103,9 +105,9 @@ class PostController extends Controller
 
          }
 
-         //dd($user);
+        $comments = Comment::all();
 
-         return view('singlePostView',compact('post','user'));
+         return view('singlePostView',compact('post','user','comments'));
     }
 
     /**
