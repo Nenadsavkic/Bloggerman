@@ -4,19 +4,24 @@
             Bloggerman
         @endsection
         @section('content')
+        <div class="cover-img">
+           @include('layouts.carousel')
+        </div>
             <div class="container content">
-                <div class="row mt-5">
-                    <div class="col-md-8 offset-md-2">
+                {{-- <div class="cover-img">
+                    <div class="row mt-5">
+                        <div class="col-md-8 offset-md-2">
+                            <h1 class="text-center text-primary mt-5">Welcome to Bloggerman</h1>
+                            <h2 class="text-center text-primary"> web platform for bloggers with superpowers.</h2>
+                            <br>
+                            <h2 class="text-center text-primary">Join us, and build something amaizing!</h2>
+                        </div>
 
-                        @include('layouts.flashMessage')
-
-                        <h1 class="text-center text-primary mt-5">Welcome to Bloggerman</h1>
-                        <h2 class="text-center text-primary"> web platform for bloggers with superpowers.</h2>
-                        <br>
-                        <h2 class="text-center text-primary">Join us, and build something amaizing!</h2>
                     </div>
+                </div> --}}
 
-
+                <div class="col-md-6 offset-md-3">
+                    @include('layouts.flashMessage')
                 </div>
                 <div class="row mt-5">
 

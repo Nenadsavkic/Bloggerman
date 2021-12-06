@@ -10004,6 +10004,7 @@ h3 {
 }
 .pb-4, .py-4 {
   padding-bottom: 0 !important;
+  padding-top: 0 !important;
 }
 
 .content {
@@ -10012,4 +10013,8 @@ h3 {
 
 .card-img {
   height: 250px;
+}
+
+.cover-img img {
+  height: 600px;
 }
