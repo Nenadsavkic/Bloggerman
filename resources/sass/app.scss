@@ -1,6 +1,6 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
-
+@import url('https://fonts.googleapis.com/css2?family=Alice&display=swap');
 // Variables
 @import 'variables';
 
@@ -8,15 +8,17 @@
 @import '~bootstrap/scss/bootstrap';
 
 .pb-4, .py-4 {
+    margin-top: 0;
     padding-bottom: 0 !important;
     padding-top: 0 !important;
 }
 .content {
-    min-height: 1200px;
+    min-height: 500px;
 }
 .card-img {
     height: 250px;
 }
-.cover-img img{
-    height: 600px;
+.carousel-caption h1{
+font-family: 'Alice', serif;
 }
+

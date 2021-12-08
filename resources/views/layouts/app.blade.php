@@ -37,12 +37,10 @@
                     <!-- Left Side Of Navbar -->
                     @if (Auth::user())
                       <ul class="navbar-nav mr-auto ">
-                        <li><a class=" text-decoration-none text-light" href="{{url('/home') }}">Home</a></li>
+                        <li><a class=" text-decoration-none text-light" href="{{url('/home') }}">My profile</a></li>
                      </ul>
 
                     @endif
-
-
                     <!-- Right Side Of Navbar -->
 
                     <ul class="navbar-nav ml-auto">

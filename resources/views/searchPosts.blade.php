@@ -21,7 +21,7 @@
             @include('layouts.flashMessage')
         </div>
         <div class="row mt-5">
-                @foreach ($allPosts as $post)
+                @foreach ($result as $post)
                 <div class="col-md-4 mt-2 mb-5">
                     <div class="card text-center">
                         <div class="card-header bg-dark text-light">

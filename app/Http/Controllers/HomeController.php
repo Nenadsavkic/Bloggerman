@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -79,5 +80,12 @@ class HomeController extends Controller
 
 
         return redirect('/')->with('message','Your profile is deleted.');
+    }
+
+    public function categories()
+    {
+        $categories = Category::all();
+
+        return view('layouts.navigation', compact('categories'));
     }
 }

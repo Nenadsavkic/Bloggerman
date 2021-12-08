@@ -19,9 +19,21 @@ class PostController extends Controller
      */
     public function index()
     {
-        $allPosts = Post::all();
+        $categories = Category::all();
 
-        return view('welcome', compact('allPosts'));
+
+        if(isset(request()->cat)) {
+
+            $cat = Category::where('name', request()->cat)->first();
+            $allPosts = Post::where('category_id', $cat->id)->get();
+
+        }else{
+
+           $allPosts = Post::all();
+
+        }
+
+        return view('welcome', compact('allPosts', 'categories'));
     }
 
     /**
@@ -204,5 +216,15 @@ class PostController extends Controller
 
         return view('home', compact('user','posts'));
 
+    }
+
+    public function searchPosts(Request $request)
+    {
+        //$search_text = $_GET['query'];
+        $search_text = $request->search_text;
+
+        $result = Post::where('description', 'LIKE', '%'.$search_text.'%')->get();
+
+        return view('searchPosts',compact('result'));
     }
 }
