@@ -6,7 +6,7 @@
 @section('content')
     <div class="container content">
         <div class="row">
-            <div class="col-md-10 offset-md-1">
+            <div class="col-md-10 offset-md-1 mt-5">
                   <div class="card p-5 ">
                       <div>
                             <p class="float-left">Author: {{ $post->user->name }}

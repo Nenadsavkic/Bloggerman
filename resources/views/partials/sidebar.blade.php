@@ -22,7 +22,7 @@
         @method('delete')
         <button class="btn btn-danger ml-3 mt-1" type="submit"
         onclick="return confirm('Are you sure you want to delete your profile image');">Delete profile image</button>
-       </form>
+    </form>
 
     <hr>
 

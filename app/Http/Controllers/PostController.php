@@ -17,7 +17,7 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $categories = Category::all();
 
@@ -27,9 +27,15 @@ class PostController extends Controller
             $cat = Category::where('name', request()->cat)->first();
             $allPosts = Post::where('category_id', $cat->id)->get();
 
+        }elseIf(isset(request()->search_text)){
+
+            $search_text = $request->search_text;
+
+            $allPosts = Post::where('description', 'LIKE', '%'.$search_text.'%')->get();
+
         }else{
 
-           $allPosts = Post::all();
+            $allPosts = Post::all();
 
         }
 
@@ -216,15 +222,5 @@ class PostController extends Controller
 
         return view('home', compact('user','posts'));
 
-    }
-
-    public function searchPosts(Request $request)
-    {
-        //$search_text = $_GET['query'];
-        $search_text = $request->search_text;
-
-        $result = Post::where('description', 'LIKE', '%'.$search_text.'%')->get();
-
-        return view('searchPosts',compact('result'));
     }
 }

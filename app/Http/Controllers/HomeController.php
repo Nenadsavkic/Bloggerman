@@ -71,6 +71,18 @@ class HomeController extends Controller
           return redirect()->back()->with('message', 'Your image is deleted.');
     }
 
+    public function categories()
+    {
+        $categories = Category::all();
+
+        return view('partials.navigation', compact('categories'));
+    }
+
+    public function editUserProfile()
+    {
+        $user = Auth::user();
+        return view('editUserProfile', compact('user'));
+    }
 
     public function deleteUser($id)
     {
@@ -80,12 +92,5 @@ class HomeController extends Controller
 
 
         return redirect('/')->with('message','Your profile is deleted.');
-    }
-
-    public function categories()
-    {
-        $categories = Category::all();
-
-        return view('layouts.navigation', compact('categories'));
     }
 }

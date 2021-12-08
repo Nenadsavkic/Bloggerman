@@ -5,10 +5,7 @@
 @section('content')
     <div class="container-fluid content">
         <div class="row">
-            <div class="col-md-3">
-                @include('layouts.sidebar')
-            </div>
-             <div class="col-md-7 offset-md-1 mt-5">
+             <div class="col-md-8 offset-md-2 mt-5">
                      <div class="card">
 
                         <div class="row mt-5">

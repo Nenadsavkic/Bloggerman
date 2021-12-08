@@ -5,12 +5,12 @@
 @endsection
 @section('content')
 
-@include('layouts.carousel')
+@include('partials.carousel')
 
 <div class="container-fluid bg-dark">
     <div class="row">
-        <div class="col-md-7 offset-md-3">
-          @include('layouts.navigation')
+        <div class="col-md-8 offset-md-2">
+          @include('partials.navigation')
         </div>
     </div>
 </div>
@@ -18,7 +18,7 @@
     <div class="container content main-container">
 
         <div class="col-md-6 offset-md-3">
-            @include('layouts.flashMessage')
+            @include('partials.flashMessage')
         </div>
         <div class="row mt-5">
                 @foreach ($allPosts as $post)
@@ -50,6 +50,14 @@
                         </div>
                 </div>
                 @endforeach
+
+                @if ($allPosts->count() == 0)
+
+                <div class="alert alert-primary">
+                    <p class="text-center mt-2">Sorry, your search has no result. Please, pick something else.</p>
+                </div>
+
+            @endif
 
         </div>
 

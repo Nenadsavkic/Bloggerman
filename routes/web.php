@@ -27,8 +27,9 @@ Route::get('/single-post/{id}', [App\Http\Controllers\PostController::class, 'sh
 ->name('singlePostView');
 Route::get('/edit-post/{id}', [App\Http\Controllers\PostController::class, 'edit'])
 ->name('editPost');
-Route::get('/search-posts', [App\Http\Controllers\PostController::class, 'searchPosts'])
-->name('searchPosts');
+Route::get('/edit-user-profile', [App\Http\Controllers\HomeController::class, 'editUserProfile'])
+->name('editUserProfile');
+
 
 
 
