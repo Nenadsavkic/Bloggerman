@@ -25,7 +25,7 @@
             <div class="container">
                 <div>
                     <a class="navbar-brand" href="{{ url('/') }}">
-                       <img src="{{ asset('/images/logo_image/bloggerman2.png') }}" style="width: 70px" class="mr-3">  Bloggermans
+                       <img src="{{ asset('/images/logo_image/bloggerman2.png') }}" style="width: 70px" class="mr-3">  Bloggerman
                     </a>
                 </div>
 
