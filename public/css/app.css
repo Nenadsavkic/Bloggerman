@@ -10034,3 +10034,15 @@ h3 {
 .navigation:hover {
   color: brown !important;
 }
+
+#user-img {
+  background-color: brown;
+}
+
+.btn-addImg {
+  width: 190px;
+}
+
+.btn-deleteImg {
+  width: 190px;
+}
