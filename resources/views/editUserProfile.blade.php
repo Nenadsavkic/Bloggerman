@@ -6,7 +6,7 @@
 <div class="container-fluid bg-secondary">
     <div class="row">
         <div class="col-md-2 offset-md-5 text-center">
-            <h2 class="mt-5 text-white">{{ $user->name }}</h2>
+            <h2 class="mt-5 text-white user_name">{{ $user->name }}</h2>
             <p class="text-white">Memaber since: {{ $user->created_at->format('M. d. Y') }}</p>
         </div>
         <div class="col-md-2 offset-md-5">
