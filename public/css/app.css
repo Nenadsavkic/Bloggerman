@@ -10058,3 +10058,7 @@ h3 {
 .user_name {
   font-family: "Alice", serif;
 }
+
+.comment-delete-btn:hover {
+  color: red;
+}

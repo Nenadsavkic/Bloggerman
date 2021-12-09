@@ -22,25 +22,33 @@
         </div>
         <div class="row mt-5">
                 @foreach ($allPosts as $post)
-                <div class="col-md-4 mt-2 mb-5">
+                <div class="col-md-6 mt-2 mb-5">
                     <div class="card text-center">
                         <div class="card-header bg-dark text-light">
                             <p class="float-left mt-2">Author: {{ $post->user->name }}</p>
                             <p class="float-right mt-2">Views: {{ $post->views }} </p>
                         </div>
                         <div class="card-body">
-                            <a class="text-muted" href="{{ route('singlePostView', ['id'=>$post->id]) }}">
-                            <h5 class="card-title">{{ $post->description }}</h5>
-                            @if (isset($post->image1))
-                            <img class="img-fluid card-img" src="/images/post_images/{{ $post->image1 }}" class="card-img">
-                        @elseif(isset($post->image2))
-                            <img class="img-fluid card-img" src="/images/post_images/{{ $post->image2 }}" class="card-img">
-                        @elseif(isset($post->image3))
-                            <img class="img-fluid card-img" src="/images/post_images/{{ $post->image3 }}" class="card-img">
-                        @else
-                            <img class="img-fluid card-img" src="/images/post_images/noimage.jpg">
-                        @endif
-                        </a>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    @if (isset($post->image1))
+                                    <img class="img-fluid card-img" src="/images/post_images/{{ $post->image1 }}" class="card-img">
+                                 @elseif(isset($post->image2))
+                                    <img class="img-fluid card-img" src="/images/post_images/{{ $post->image2 }}" class="card-img">
+                                 @elseif(isset($post->image3))
+                                    <img class="img-fluid card-img" src="/images/post_images/{{ $post->image3 }}" class="card-img">
+                                 @else
+                                    <img class="img-fluid card-img" src="/images/post_images/noimage.jpg">
+                                 @endif
+                                </div>
+                                <div class="col-md-6">
+                                   {{-- <h5 class="card-title mt-2 ">{{ $post->description }}</h5> --}}
+                                   <p class="card-text">{!! Str::words( $post->body, 10) !!}...</p>
+                                   <a href="{{ route('singlePostView', ['id'=>$post->id]) }}" class="btn btn-primary">See more</a>
+
+                                </div>
+                            </div>
 
                         </div>
                         <div class="card-footer text-muted bg-dark text-white">
