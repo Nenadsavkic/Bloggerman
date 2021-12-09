@@ -88,7 +88,7 @@
                                     <form action="{{ route('commentDelete', ['id'=>$comment->id]) }}" method="post">
                                         @csrf
                                         @method('delete')
-                                        <button type="submit" class="btn btn-danger small float-right m-2 p-1">X</button>
+                                        <button type="submit" class="btn btn-danger small float-right m-2 px-2 py-1" >X</button>
                                     </form>
                                     @endif
 
