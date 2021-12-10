@@ -1,6 +1,6 @@
 # Bloggerman
 
-<p>This is a practice project. (junior level).</p>
+
 
 ## Installation
 
