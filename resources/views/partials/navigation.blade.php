@@ -12,8 +12,8 @@
           </li>
           @endforeach
       </ul>
-      <form class="form-inline px-5 my-2 my-lg-0" action="{{ route('welcome') }}?search_text">
-        <input class="form-control mr-sm-2" type="search" name="search_text" placeholder="Search Posts" aria-label="Search">
+      <form class="form-inline px-5 my-2 my-lg-0" action="{{ route('welcome') }}?query">
+        <input class="form-control mr-sm-2" type="search" name="query" placeholder="Search Posts" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
     </div>

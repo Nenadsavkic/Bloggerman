@@ -40,6 +40,8 @@ Route::post('/home-save-img', [App\Http\Controllers\HomeController::class, 'save
 Route::post('/comment/{id}', [App\Http\Controllers\CommentController::class, 'createComment'])
 ->name('createComment');
 
+
+
 Route::delete('/comment-delete/{id}', [App\Http\Controllers\CommentController::class, 'destroy'])
 ->name('commentDelete');
 Route::delete('/home-delete-img', [App\Http\Controllers\HomeController::class, 'deleteImg'])

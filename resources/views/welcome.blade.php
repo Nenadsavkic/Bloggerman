@@ -59,13 +59,13 @@
                 </div>
                 @endforeach
 
-                @if ($allPosts->count() == 0)
+                @if ($allPosts->count() == 0 && request('query') == true)
 
-                <div class="alert alert-primary">
-                    <p class="text-center mt-2">Sorry, your search has no result. Please, pick something else.</p>
-                </div>
+                    <div class="alert alert-primary">
+                        <p class="text-center mt-2">Sorry, your search has no result. Please, pick something else.</p>
+                    </div>
 
-            @endif
+                @endif
 
         </div>
 

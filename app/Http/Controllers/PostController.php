@@ -27,9 +27,10 @@ class PostController extends Controller
             $cat = Category::where('name', request()->cat)->first();
             $allPosts = Post::where('category_id', $cat->id)->get();
 
-        }elseIf(isset(request()->search_text)){
+        }elseIf($request->has('query')){
 
-            $search_text = $request->search_text;
+            $search_text = $request['query'];
+
 
             $allPosts = Post::where('description', 'LIKE', '%'.$search_text.'%')->get();
 
