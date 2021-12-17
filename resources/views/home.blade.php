@@ -6,11 +6,11 @@
 {{-- Container1  Start --}}
 <div class="container-fluid bg-secondary">
     <div class="row">
-        <div class="col-md-2 offset-md-5 text-center">
+        <div class="col-md-2 pl-5 offset-md-5 text-center">
             <h2 class="mt-5 text-white user_name">{{ $user->name }}</h2>
             <p class="text-white">Memaber since: {{ $user->created_at->format('M. d. Y') }}</p>
         </div>
-        <div class="col-md-2 offset-md-5">
+        <div class="col-md-3 offset-md-5">
             <img
             @if (isset(Auth::user()->user_image))
                src="{{ asset('/images/user_image/'.Auth::user()->user_image) }}"
@@ -20,11 +20,11 @@
 
             @endif
 
-            class="img-fluid p-3 user-image mt-1 rounded-circle" style="width:300px">
+            class="img-fluid p-3 user-image mt-1 rounded-circle">
         </div>
         <div class="col-md-5 offset-md-5 mb-3">
 
-               <a href="{{ route('post.create') }}" class="btn btn-primary  rounded-pill">Create new Post</a>
+               <a href="{{ route('post.create') }}" class="btn btn-primary  rounded-pill ml-2">Create new Post</a>
                <a href="{{ route('editUserProfile') }}" class="btn btn-primary  rounded-pill">Edit Profile</a>
         </div>
     </div>

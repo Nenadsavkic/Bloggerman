@@ -10062,3 +10062,14 @@ h3 {
 .comment-delete-btn:hover {
   color: red;
 }
+
+.user-image {
+  width: 250px !important;
+  height: 250px;
+}
+
+.small-userImg img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}

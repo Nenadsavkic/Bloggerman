@@ -61,7 +61,7 @@
 
                             <li class="nav-item dropdown">
 
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link small-userImg dropdown-toggle text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     <img
                                     @if (isset(Auth::user()->user_image))
                                        src="{{ asset('/images/user_image/'.Auth::user()->user_image) }}"
@@ -71,7 +71,7 @@
 
                                     @endif
 
-                                    class="img-fluid  p-3" style="width: 100px; border-radius:40%"> {{ Auth::user()->name }}
+                                    class="img-fluid  p-3"> {{ Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
