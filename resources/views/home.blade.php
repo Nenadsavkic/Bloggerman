@@ -3,6 +3,7 @@
     {{ $user->name }} homepage
 @endsection
 @section('content')
+{{-- Container1  Start --}}
 <div class="container-fluid bg-secondary">
     <div class="row">
         <div class="col-md-2 offset-md-5 text-center">
@@ -29,6 +30,8 @@
     </div>
 
 </div>
+{{-- Conatiner1 End --}}
+{{-- Conatiner2 Start --}}
 <div class="container-fluid">
     <div class="row">
         <div class="col home-title">
@@ -40,17 +43,16 @@
         </div>
     </div>
 </div>
+{{-- Conatiner2 End --}}
 
 
+{{-- Conatiner3 Start --}}
 <div class="container content justify-content-center">
-
-
-    <div class="row">
 
 
         <div class="row">
 
-
+            {{-- All User Posts --}}
             @foreach ($posts as $post)
             <div class="col-md-4  mt-5 pt-5">
                 <div class="card text-center ">
@@ -79,11 +81,14 @@
                 </div>
             </div>
            @endforeach
+           {{-- All User Posts End --}}
         </div>
 
 
-    </div>
+
 
 </div>
+{{-- Conatiner3 End --}}
+
 
 @endsection

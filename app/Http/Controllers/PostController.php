@@ -17,16 +17,19 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    // Prikazivanje postova
     public function index(Request $request)
     {
         $categories = Category::all();
 
-
+         // postovi po kategoriji
         if(isset(request()->cat)) {
 
             $cat = Category::where('name', request()->cat)->first();
             $allPosts = Post::where('category_id', $cat->id)->get();
 
+        // postovi po rezultatima pretrage
         }elseIf($request->has('query')){
 
             $search_text = $request['query'];
@@ -34,6 +37,7 @@ class PostController extends Controller
 
             $allPosts = Post::where('description', 'LIKE', '%'.$search_text.'%')->get();
 
+        // svi postovi
         }else{
 
             $allPosts = Post::all();
@@ -48,6 +52,8 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    // Prikaz forme za kreiranje novog posta
     public function create()
     {
         $categories = Category::all();
@@ -60,6 +66,8 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    // Kreiranje novog posta
     public function store(Request $request)
     {
           $request->validate([
@@ -113,18 +121,19 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    // Prikaz odredjenog posta
     public function show($id)
     {
          $post = Post::find($id);
-         //$users = User::all()->get('id');
          $user = User::all()->where('id',$post->user_id)->first();
          if (auth()->check() && Auth::user()->id !== $post->user_id ) {
 
-            $post->increment('views');
+            $post->increment('views'); // Povecanje pregleda
 
          }
 
-        $comments = Comment::all();
+        $comments = Comment::all(); // Dodavanje komentara na post
 
          return view('singlePostView',compact('post','user','comments'));
     }
@@ -135,6 +144,8 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+     // Editovanje posta
     public function edit($id)
     {
         $post = Post::find($id);
@@ -153,11 +164,12 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    // Apdejtovanje posta
     public function update(Request $request, $id)
     {
         $post = Post::find($id);
         $user = Auth::user();
-        $posts = Post::where('user_id', $user->id)->get();
 
 
 
@@ -203,7 +215,7 @@ class PostController extends Controller
              'category_id' => $request->category
          ]);
 
-         return view('showSingleUserPost', compact('user','posts','post'));
+         return view('showSingleUserPost', compact('user','post'));
     }
 
     /**
@@ -212,6 +224,8 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    // Brisanje posta
     public function destroy($id)
     {
         $post = Post::find($id);

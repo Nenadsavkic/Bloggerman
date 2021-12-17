@@ -99,13 +99,9 @@
             @include('partials.footer')
         </main>
     </div>
-    @section('page_scripts')
-
-     <script src="{{ asset('js/app.js') }}"></script>
-     <script src="{{ asset('js/main.js') }}"></script>
-
-    @endsection
+    {{-- Editor Scripts --}}
     <script src="https://cdn.ckeditor.com/ckeditor5/29.0.0/classic/ckeditor.js"></script>
     @yield('editor-scripts')
+    {{-- Editor Scripts End --}}
 </body>
 </html>

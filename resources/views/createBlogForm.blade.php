@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 
-
+{{-- Main Container Start --}}
 <div class="container">
     <h2 class="text-center mt-5">Lets create something amaizing</h2><br>
 
@@ -27,9 +27,11 @@
         <button class="btn btn-primary" type="submit">Save</button>
     </form>
 </div>
+{{-- Main Container End --}}
 
 @endsection
 
+{{-- Text Editor Start --}}
 @section('editor-scripts')
 
 <script>
@@ -41,3 +43,4 @@
 </script>
 
 @endsection
+{{-- Text Editor End --}}

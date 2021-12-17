@@ -11,6 +11,7 @@ use Mockery\Matcher\Type;
 
 class CommentController extends Controller
 {
+    // Kreiranje komentara za odredjeni post
     public function createComment(Request $request, $id)
     {
 
@@ -38,6 +39,8 @@ class CommentController extends Controller
 
 
     }
+
+    // Brisanje komentara
 
     public function destroy($id)
     {

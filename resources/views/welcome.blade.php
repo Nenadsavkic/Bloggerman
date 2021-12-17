@@ -5,8 +5,10 @@
 @endsection
 @section('content')
 
+ {{-- Carousel --}}
 @include('partials.carousel')
 
+ {{-- Navigation Start--}}
 <div class="container-fluid bg-dark">
     <div class="row">
         <div class="col-md-8 offset-md-2">
@@ -14,7 +16,9 @@
         </div>
     </div>
 </div>
+{{-- Navigation End --}}
 
+    {{-- Main Container Start --}}
     <div class="container content main-container">
 
         <div class="col-md-6 offset-md-3">
@@ -59,6 +63,7 @@
                 </div>
                 @endforeach
 
+                {{-- Flash Message Start --}}
                 @if ($allPosts->count() == 0 && request('query') == true)
 
                     <div class="alert alert-primary">
@@ -66,6 +71,7 @@
                     </div>
 
                 @endif
+                {{-- Flash message End --}}
 
         </div>
 
@@ -73,6 +79,7 @@
 
 
     </div>
+    {{-- Main Container End --}}
 @endsection
 
 

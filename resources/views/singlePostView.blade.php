@@ -4,6 +4,7 @@
     {{ $post->description }}
 @endsection
 @section('content')
+    {{-- Main Container --}}
     <div class="container content">
         <div class="row">
             <div class="col-md-10 offset-md-1 mt-5">
@@ -58,7 +59,7 @@
 
             </div>
         </div>
-
+          {{-- Comments start --}}
          <div class="row">
              <div class="col-md-10 offset-md-1">
 
@@ -116,7 +117,10 @@
             </div>
          </div>
 
+         {{-- Comments End --}}
+
         <br>
+        {{-- Comment Form Start--}}
         <div class="row">
             <div class="col-md-10 offset-md-1">
                 @if (Auth::user())
@@ -130,6 +134,8 @@
                 <br><br>
             </div>
         </div>
+        {{-- Comment Form End --}}
     </div>
+    {{-- Main Container End --}}
 @endsection
 

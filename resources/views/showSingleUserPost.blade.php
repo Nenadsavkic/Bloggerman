@@ -3,6 +3,7 @@
     Show single post
 @endsection
 @section('content')
+    {{-- Container Start --}}
     <div class="container-fluid content">
         <div class="row">
              <div class="col-md-8 offset-md-2 mt-5">
@@ -37,15 +38,20 @@
 
 
                     </div><br>
+                        {{-- Edit Post Start --}}
                         <a href="{{ route('editPost', ['id'=>$post->id]) }}" class="btn btn-secondary float-left">Edit Post</a>
+                        {{-- Edit Post End --}}
 
+                        {{-- Delete Post Form Start --}}
                         <form action="{{ route('deletePost', ['id'=>$post->id]) }}" method="post">
                             @csrf
                             @method('delete')
                             <button type="submit" class="btn btn-secondary float-right">Delete post</button>
                         </form>
+                        {{-- Delete Post Form End --}}
                         <br><br>
              </div>
         </div>
     </div>
+    {{-- Container End --}}
 @endsection

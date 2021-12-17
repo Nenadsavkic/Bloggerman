@@ -26,6 +26,8 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+    // Profil korisnika
     public function index()
     {
         $user = Auth::user();
@@ -33,7 +35,7 @@ class HomeController extends Controller
 
         return view('home', compact('user','posts'));
     }
-
+     // Prikazivanje pojedinacnog posta na korisnickom profilu
     public function showSingleUserPost($id)
     {
         $post = Post::find($id);
@@ -41,7 +43,7 @@ class HomeController extends Controller
         return view('showSingleUserPost',compact('post'));
     }
 
-
+    // dodavanje slike korisnika
     public function saveImg(Request $request)
     {
         $user = Auth::user();
@@ -54,7 +56,7 @@ class HomeController extends Controller
             $image = $request->file('user_image');
             $image_name = $image->getClientOriginalName();
             $image->move(public_path('/images/user_image'), $image_name);
-       DB::table('users')->where(['id' => Auth::user()->id])->update(['user_image' => $image_name]);
+            User::where(['id' => Auth::user()->id])->update(['user_image' => $image_name]);
 
       }
 
@@ -62,15 +64,16 @@ class HomeController extends Controller
        return redirect()->back();
     }
 
+    // Brisanje slike korisnika
     public function deleteImg()
     {
-          $image = null;
-       DB::table('users')->where(['id' => Auth::user()->id])->update(['user_image' => $image]);
 
+        User::where(['id' => Auth::user()->id])->update(['user_image' => null]);
 
-          return redirect()->back()->with('message', 'Your image is deleted.');
+        return redirect()->back()->with('message', 'Your image is deleted.');
     }
 
+    // dodavanje kategorija u navigacioni meni
     public function categories()
     {
         $categories = Category::all();
@@ -78,12 +81,14 @@ class HomeController extends Controller
         return view('partials.navigation', compact('categories'));
     }
 
+    // Editovanje korisnickog profila
     public function editUserProfile()
     {
         $user = Auth::user();
         return view('editUserProfile', compact('user'));
     }
 
+    // Brisanje korisnika
     public function deleteUser($id)
     {
         $user = User::find($id);
