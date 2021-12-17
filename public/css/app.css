@@ -10017,6 +10017,10 @@ h3 {
   height: 250px;
 }
 
+.card-body {
+  height: 320px;
+}
+
 .carousel-caption h1 {
   font-family: "Alice", serif;
 }

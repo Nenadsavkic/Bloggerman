@@ -39,11 +39,11 @@
 
                     </div><br>
                         {{-- Edit Post Start --}}
-                        <a href="{{ route('editPost', ['id'=>$post->id]) }}" class="btn btn-secondary float-left">Edit Post</a>
+                        <a href="{{ route('post.edit', ['post'=>$post->id]) }}" class="btn btn-secondary float-left">Edit Post</a>
                         {{-- Edit Post End --}}
 
                         {{-- Delete Post Form Start --}}
-                        <form action="{{ route('deletePost', ['id'=>$post->id]) }}" method="post">
+                        <form action="{{ route('post.destroy', ['post'=>$post->id]) }}" method="post">
                             @csrf
                             @method('delete')
                             <button type="submit" class="btn btn-secondary float-right">Delete post</button>

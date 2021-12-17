@@ -49,7 +49,7 @@
                                 <div class="col-md-6">
                                    {{-- <h5 class="card-title mt-2 ">{{ $post->description }}</h5> --}}
                                    <p class="card-text">{!! Str::words( $post->body, 10) !!}...</p>
-                                   <a href="{{ route('singlePostView', ['id'=>$post->id]) }}" class="btn btn-primary">See more</a>
+                                   <a href="{{ route('post.show', ['post'=>$post->id]) }}" class="btn btn-primary">See more</a>
 
                                 </div>
                             </div>

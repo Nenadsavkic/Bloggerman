@@ -18,7 +18,7 @@
                                 @else
                                     src="/images/user_image/noimage.jpg"
                                 @endif
-                                style="width:70px; border-radius:50%">
+                                style="width:70px; border-radius:50%; height:70px">
                             </span></p>
                             <p class="float-right mt-3">Updated: {{ $post->updated_at->format('d.m.Y') }}</p>
                       </div>

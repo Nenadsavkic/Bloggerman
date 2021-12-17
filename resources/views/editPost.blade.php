@@ -8,17 +8,20 @@
 <div class="container">
     <h2 class="text-center mt-5">Edit post</h2><br>
 
-    <form action="{{ route('saveEditedPost', ['id'=>$post->id]) }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('post.update', ['post'=>$post->id]) }}" method="post" enctype="multipart/form-data">
         @csrf
+        @method('put')
         <input class="form-control" type="text" name="description" value="{{ $post->description }}"><br>
         <textarea class="form-control" name="body" id="editor"  cols="30" rows="10">
           {!!$post->body!!}
         </textarea>
         <br>
-        <input type="file" name="image1" class="form-control"><br>
-        <input type="file" name="image2" class="form-control"><br>
-        <input type="file" name="image3" class="form-control"><br>
+        <input type="file" name="image1" class="form-control" value="{{ $post->image1 }}"><br>
+        <input type="file" name="image2" class="form-control" value="{{ $post->image2 }}"><br>
+        <input type="file" name="image3" class="form-control" value="{{ $post->image3 }}"><br>
         <select name="category" class="form-control">
+            <option value="{{ $post->category->id }}">{{ $post->category->name }}</option>
+
             @foreach ($categories as $category)
                 <option value="{{ $category->id }}">{{ $category->name }}</option>
             @endforeach

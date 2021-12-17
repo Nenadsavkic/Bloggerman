@@ -18,18 +18,18 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    // Prikazivanje postova
+    // Showing posts
     public function index(Request $request)
     {
         $categories = Category::all();
 
-         // postovi po kategoriji
+         // Posts by category
         if(isset(request()->cat)) {
 
             $cat = Category::where('name', request()->cat)->first();
             $allPosts = Post::where('category_id', $cat->id)->get();
 
-        // postovi po rezultatima pretrage
+        // Posts by search result
         }elseIf($request->has('query')){
 
             $search_text = $request['query'];
@@ -37,7 +37,7 @@ class PostController extends Controller
 
             $allPosts = Post::where('description', 'LIKE', '%'.$search_text.'%')->get();
 
-        // svi postovi
+        // All posts
         }else{
 
             $allPosts = Post::all();
@@ -53,7 +53,7 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    // Prikaz forme za kreiranje novog posta
+    // Showing the form for creating a new post
     public function create()
     {
         $categories = Category::all();
@@ -67,7 +67,7 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    // Kreiranje novog posta
+    // Creating of new post
     public function store(Request $request)
     {
           $request->validate([
@@ -122,7 +122,7 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    // Prikaz odredjenog posta
+    // Showing the specified post by 'id'
     public function show($id)
     {
          $post = Post::find($id);
@@ -145,7 +145,7 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     // Editovanje posta
+     // Showing the form for editing specified post by 'id'
     public function edit($id)
     {
         $post = Post::find($id);
@@ -165,7 +165,7 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    // Apdejtovanje posta
+    // Updating of the post
     public function update(Request $request, $id)
     {
         $post = Post::find($id);
@@ -225,7 +225,7 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    // Brisanje posta
+    // Deleting the post
     public function destroy($id)
     {
         $post = Post::find($id);

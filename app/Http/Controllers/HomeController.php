@@ -27,7 +27,9 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
 
-    // Profil korisnika
+
+
+    // User profile
     public function index()
     {
         $user = Auth::user();
@@ -35,7 +37,7 @@ class HomeController extends Controller
 
         return view('home', compact('user','posts'));
     }
-     // Prikazivanje pojedinacnog posta na korisnickom profilu
+     // Showing single user post
     public function showSingleUserPost($id)
     {
         $post = Post::find($id);
@@ -43,7 +45,7 @@ class HomeController extends Controller
         return view('showSingleUserPost',compact('post'));
     }
 
-    // dodavanje slike korisnika
+    // Add user profile image
     public function saveImg(Request $request)
     {
         $user = Auth::user();
@@ -64,7 +66,7 @@ class HomeController extends Controller
        return redirect()->back();
     }
 
-    // Brisanje slike korisnika
+    // Deleting user profile image
     public function deleteImg()
     {
 
@@ -73,7 +75,7 @@ class HomeController extends Controller
         return redirect()->back()->with('message', 'Your image is deleted.');
     }
 
-    // dodavanje kategorija u navigacioni meni
+    // Add categories in navigation menu
     public function categories()
     {
         $categories = Category::all();
@@ -81,14 +83,14 @@ class HomeController extends Controller
         return view('partials.navigation', compact('categories'));
     }
 
-    // Editovanje korisnickog profila
+    // Edit user profile
     public function editUserProfile()
     {
         $user = Auth::user();
         return view('editUserProfile', compact('user'));
     }
 
-    // Brisanje korisnika
+    // Deleting user
     public function deleteUser($id)
     {
         $user = User::find($id);

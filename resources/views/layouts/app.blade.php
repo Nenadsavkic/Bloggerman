@@ -24,7 +24,7 @@
         <nav class="navbar navbar-expand-md navbar-dark bg-dark text-light shadow-sm">
             <div class="container">
                 <div>
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <a class="navbar-brand" href="{{ route('welcome') }}">
                        <img src="{{ asset('/images/logo_image/bloggerman2.png') }}" style="width: 70px" class="mr-3">  Bloggerman
                     </a>
                 </div>
