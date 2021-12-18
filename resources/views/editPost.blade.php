@@ -16,9 +16,14 @@
           {!!$post->body!!}
         </textarea>
         <br>
-        <input type="file" name="image1" class="form-control" value="{{ $post->image1 }}"><br>
-        <input type="file" name="image2" class="form-control" value="{{ $post->image2 }}"><br>
-        <input type="file" name="image3" class="form-control" value="{{ $post->image3 }}"><br>
+        <label class="ml-2" for="image1">Add image 1 (Optional)</label>
+        <input type="file" name="image1" class="form-control post-image1"><br>
+
+        <label class="ml-2" for="image2">Add image 2 (Optional)</label>
+        <input type="file" name="image2" class="form-control"><br>
+
+        <label class="ml-2" for="image3">Add image 3  (Optional)</label>
+        <input type="file" name="image3" class="form-control"><br>
         <select name="category" class="form-control">
             <option value="{{ $post->category->id }}">{{ $post->category->name }}</option>
 

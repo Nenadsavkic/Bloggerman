@@ -15,9 +15,15 @@
         <label for="body">Required <span class="text-danger">*</span></label>
         <textarea class="form-control" name="body" id="editor"  cols="30" rows="10" placeholder="Write your post"></textarea>
         <br>
+        <label class="ml-2" for="image1">Add image 1 (Optional)</label>
         <input type="file" name="image1" class="form-control"><br>
+
+        <label class="ml-2" for="image1">Add image 2 (Optional)</label>
         <input type="file" name="image2" class="form-control"><br>
+
+        <label class="ml-2" for="image1">Add image 3 (Optional)</label>
         <input type="file" name="image3" class="form-control"><br>
+
         <select name="category" class="form-control">
             @foreach ($categories as $category)
                 <option value="{{ $category->id }}">{{ $category->name }}</option>

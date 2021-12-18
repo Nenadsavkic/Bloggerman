@@ -65,7 +65,15 @@ font-family: 'Alice', serif;
     height: 100px;
     border-radius: 50%;
 }
-
+.ck-content{
+    min-height: 300px !important;
+}
+.ck-file-dialog-button{
+    display: none !important;
+}
+.ck .ck-dropdown{
+    display: none !important;
+}
 
 
 
