@@ -71,9 +71,16 @@ font-family: 'Alice', serif;
 .ck-file-dialog-button{
     display: none !important;
 }
-.ck .ck-dropdown{
+.ck.ck-dropdown:nth-child(n+1){
     display: none !important;
 }
+.ck.ck-dropdown:last-of-type{
+    display: none !important;
+}
+.ck.ck-dropdown:first-child{
+    display: block !important;
+}
+
 
 
 

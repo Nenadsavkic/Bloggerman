@@ -47,9 +47,11 @@
                                  @endif
                                 </div>
                                 <div class="col-md-6">
-                                   {{-- <h5 class="card-title mt-2 ">{{ $post->description }}</h5> --}}
-                                   <p class="card-text">{!! substr( $post->body,0, 170) !!}...</p>
-                                   <a href="{{ route('post.show', ['post'=>$post->id]) }}" class="btn btn-primary">See more</a>
+                                   <h3 class="card-title mt-2 "><strong>{{ $post->description }}</strong></h3>
+                                   <p>If you want to read more about this awesome blog please click the button below.</p>
+                                   {{-- <p class="card-text">{!! Str::words( $post->body, 10) !!}...</p> --}}
+                                   {{-- <p class="card-text">{!! substr( $post->body,0,150) !!}...</p> --}}
+                                   <a href="{{ route('post.show', ['post'=>$post->id]) }}" class="btn btn-primary mt-5">See more</a>
 
                                 </div>
                             </div>
