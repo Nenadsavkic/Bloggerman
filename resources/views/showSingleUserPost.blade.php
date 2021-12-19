@@ -34,7 +34,11 @@
                                 </div>
                             </div>
                             <div class="col-md-10 offset-md-1 mb-5">
-                                <p>{!!$post->body!!}</p>
+                                <div class="container-fluid mt-5">
+                                    <h2 class="text-center mt-5"><strong>{{ $post->description }}</strong></h2>
+                                    <p>{!!$post->body!!}</p>
+                                </div>
+
                             </div>
 
                         </div>

@@ -46,13 +46,15 @@
                                     <img class="img-fluid card-img" src="/images/post_images/noimage.jpg">
                                  @endif
                                 </div>
-                                <div class="col-md-6">
-                                   <h3 class="card-title mt-2 "><strong>{{ $post->description }}</strong></h3>
-                                   <p>If you want to read more about this awesome blog please click the button below.</p>
-                                   {{-- <p class="card-text">{!! Str::words( $post->body, 10) !!}...</p> --}}
-                                   {{-- <p class="card-text">{!! substr( $post->body,0,150) !!}...</p> --}}
-                                   <a href="{{ route('post.show', ['post'=>$post->id]) }}" class="btn btn-primary mt-5">See more</a>
+                                <div class="col-md-6 post-content">
+                                    <div class="card-content">
+                                        <h3 class="card-title mt-2 mb-5 "><strong>{{ $post->description }}</strong></h3>
+                                        {{-- <p>If you want to read more about this awesome blog please click the button below.</p> --}}
+                                        {{-- <p class="card-text">{!! Str::words( $post->body, 15) !!}...</p> --}}
 
+                                        <p class="card-text">{!! substr($post->body,0,200) !!}...</p>
+                                        <a href="{{ route('post.show', ['post'=>$post->id]) }}" class="btn btn-primary mt-3">See more</a>
+                                  </div>
                                 </div>
                             </div>
 

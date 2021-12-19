@@ -51,9 +51,11 @@
 
                             </div>
                         </div>
+                      <div class="container-fluid mt-5">
+                        <h2 class="text-center mt-5"><strong>{!! $post->description !!}</strong></h2>
+                        <p class="mt-5 p-3">{!! $post->body !!}</p>
+                      </div>
 
-
-                      <p class="mt-5 p-3">{!! $post->body !!}</p>
                   </div><br>
 
 
