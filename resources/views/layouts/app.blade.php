@@ -23,7 +23,7 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark text-light shadow-sm">
-            <div class="container">
+            <div id="container" class="container">
                 <div>
                     <a class="navbar-brand" href="{{ route('welcome') }}">
                        <img src="{{ asset('/images/logo_image/bloggerman2.png') }}" style="width: 70px" class="mr-3">  Bloggerman
@@ -104,5 +104,13 @@
     <script src="https://cdn.ckeditor.com/ckeditor5/29.0.0/classic/ckeditor.js"></script>
     @yield('editor-scripts')
     {{-- Editor Scripts End --}}
+    {{-- Google translate --}}
+    <script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+    <script>
+        function loadGoogleTranslate(){
+            new google.translate.TranslateElement("container");
+        }
+    </script>
+    {{-- Google translate End --}}
 </body>
 </html>
